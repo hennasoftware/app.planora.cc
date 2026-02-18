@@ -1,6 +1,6 @@
 import "../styles/global.css";
-import ComingSoon from "../pages/ComingSoon.tsx";
+import ItineraryPage from "../pages/ItineraryPage.tsx";
 
 export default function App() {
-  return <ComingSoon />;
+  return <ItineraryPage />;
 }
