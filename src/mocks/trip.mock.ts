@@ -1,13 +1,13 @@
-import type Itinerary from "../types/Itinerary.ts";
+import type Trip from "../types/Trip.ts";
 
-export const mockItinerary: Itinerary = {
-  id: 1,
+export const mockTrip: Trip = {
+  id: "38ym2LxbHHrzZCZZpI2x",
   slug: "orlando-2026",
   startDate: "2026-05-27",
   endDate: "2026-06-12",
   expireDate: "2026-06-19",
+  active: true,
   meta: {
-    version: "1.0",
     createdAt: "2024-02-01",
     author: "Planora",
   },
@@ -25,9 +25,9 @@ export const mockItinerary: Itinerary = {
     website:
       "https://www.airbnb.com.br/rooms/53540930?check_in=2026-05-27&check_out=2026-06-12&guests=1&adults=8&s=67&unique_share_id=f20a9331-80e8-4a0a-8353-9b58eb5c7924",
     checkInDate: "2026-05-27",
-    checkInTime: "16:00",
+    checkInTime: "16h00",
     checkOutDate: "2026-06-12",
-    checkOutTime: "12:00",
+    checkOutTime: "12h00",
     latitude: 28.30049048176157,
     longitude: -81.45906819377491,
   },
@@ -51,7 +51,7 @@ export const mockItinerary: Itinerary = {
       img: "https://placehold.co/600x400",
       activities: [
         {
-          time: "16:00",
+          time: "16h00",
           description: "Check-in at the accommodation and settle in.",
         },
       ],

@@ -1,6 +1,6 @@
 import "../styles/global.css";
-import ItineraryPage from "../pages/ItineraryPage.tsx";
+import TripPage from "../pages/TripPage.tsx";
 
 export default function App() {
-  return <ItineraryPage />;
+  return <TripPage />;
 }

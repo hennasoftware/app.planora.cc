@@ -1,6 +1,6 @@
 import type Activity from "./Activity.ts";
 
-export default interface ItineraryDay {
+export default interface TripDay {
   day: number;
   date: string;
   title: string;
