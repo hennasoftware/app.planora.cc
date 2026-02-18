@@ -5,6 +5,12 @@ export const mockItinerary: Itinerary = {
   slug: "orlando-2026",
   startDate: "2026-05-27",
   endDate: "2026-06-12",
+  expireDate: "2026-06-19",
+  meta: {
+    version: "1.0",
+    createdAt: "2024-02-01",
+    author: "Planora",
+  },
   location: {
     city: "Orlando",
     state: "Florida",

@@ -8,6 +8,12 @@ export default interface Itinerary {
   slug: string;
   startDate: string;
   endDate: string;
+  expireDate: string;
+  meta: {
+    version: string;
+    createdAt: string;
+    author: string;
+  };
   location: Location;
   accommodation: Accommodation;
   places: Place[];
