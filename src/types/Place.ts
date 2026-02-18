@@ -1,7 +1,7 @@
 export default interface Place {
   id: number;
   name: string;
-  category: "accommodation" | "activity" | "restaurant" | "store";
+  category: "activity" | "restaurant" | "store" | "point_of_interest";
   latitude: number;
   longitude: number;
   address?: string;
