@@ -7,7 +7,6 @@ import type TripDay from "../types/TripDay.ts";
 
 export default function mapFirestoreTrip(doc: DocumentData): Trip {
   return {
-    id: doc.id,
     slug: doc.slug ?? "",
     startDate: doc.startDate,
     endDate: doc.endDate,
