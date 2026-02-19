@@ -1,7 +1,12 @@
+import { useParams } from "react-router-dom";
+
 import useTrip from "../hooks/useTrip.ts";
 
 export default function TripPage() {
-  const { trip, loading, notFound } = useTrip("test-orlando-2026-a1b1c3");
+  const params = useParams();
+  const slug = params.slug;
+  const { trip, loading, notFound } = useTrip(slug);
+
   let content;
 
   if (loading) {
