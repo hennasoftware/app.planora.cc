@@ -1,6 +1,6 @@
 import "../styles/global.css";
-import TripPage from "../pages/TripPage.tsx";
+import AppRouter from "../routes/router.tsx";
 
 export default function App() {
-  return <TripPage />;
+  return <AppRouter />;
 }
