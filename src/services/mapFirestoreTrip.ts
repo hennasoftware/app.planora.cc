@@ -36,7 +36,6 @@ export default function mapFirestoreTrip(doc: DocumentData): Trip {
       longitude: Number(doc.accommodation?.longitude ?? 0),
     },
     places: (doc.places ?? []).map((place: Place) => ({
-      id: Number(place.id),
       name: place.name ?? "",
       category: place.category ?? "",
       latitude: Number(place.latitude ?? 0),

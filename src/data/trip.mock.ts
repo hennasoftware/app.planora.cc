@@ -32,7 +32,6 @@ export const mockTrip: Trip = {
   },
   places: [
     {
-      id: 10,
       name: "Disney's Magic Kingdom",
       category: "activity",
       latitude: 28.418828608442183,
@@ -52,6 +51,7 @@ export const mockTrip: Trip = {
         {
           time: "16h00",
           description: "Check-in at the accommodation and settle in.",
+          icon: "fa-hotel",
         },
       ],
       tip: "Make sure to bring a copy of your reservation confirmation and a valid ID for check-in.",
