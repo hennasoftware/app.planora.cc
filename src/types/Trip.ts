@@ -4,7 +4,6 @@ import type Place from "./Place.ts";
 import type TripDay from "./TripDay.ts";
 
 export default interface Trip {
-  id: string;
   slug: string;
   startDate: string;
   endDate: string;

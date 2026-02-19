@@ -1,8 +1,7 @@
 import type Trip from "../types/Trip.ts";
 
 export const mockTrip: Trip = {
-  id: "38ym2LxbHHrzZCZZpI2x",
-  slug: "orlando-2026",
+  slug: "test-orlando-2026-a1b2c3",
   startDate: "2026-05-27",
   endDate: "2026-06-12",
   expireDate: "2026-06-19",
