@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { getTripBySlug } from "../services/getTripBySlug.ts";
 import mapFirestoreTrip from "../services/mapFirestoreTrip.ts";
-import { getTripBySlug } from "../services/tripService.ts";
 import type Trip from "../types/Trip.ts";
 
 export default function useTrip(slug?: string) {
