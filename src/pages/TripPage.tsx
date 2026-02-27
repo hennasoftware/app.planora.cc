@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import Hero from "../components/sections/hero/Hero.tsx";
+import Itinerary from "../components/sections/Itinerary.tsx";
 import useTrip from "../hooks/useTrip.ts";
 
 import LoadingPage from "./LoadingPage.tsx";
@@ -15,5 +16,10 @@ export default function TripPage() {
 
   if (notFound || !trip) return <SlugNotFoundPage />;
 
-  return <Hero trip={trip} />;
+  return (
+    <>
+      <Hero trip={trip} />
+      <Itinerary trip={trip} />
+    </>
+  );
 }
