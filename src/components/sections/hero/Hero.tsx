@@ -1,21 +1,13 @@
-import { useParams } from "react-router-dom";
-
-import useTrip from "../../../hooks/useTrip.ts";
-import LoadingPage from "../../../pages/LoadingPage.tsx";
-import SlugNotFoundPage from "../../../pages/SlugNotFoundPage.tsx";
+import type Trip from "../../../types/Trip.ts";
 import BouncingBalls from "../../utils/BouncingBalls.tsx";
 
 import TripPreview from "./TripPreview.tsx";
 
-export default function Hero() {
-  const params = useParams();
-  const slug = params.slug;
-  const { trip, loading, notFound } = useTrip(slug);
+type HeroProps = {
+  trip: Trip;
+};
 
-  if (loading) return <LoadingPage />;
-
-  if (notFound || !trip) return <SlugNotFoundPage />;
-
+export default function Hero({ trip }: HeroProps) {
   return (
     <section
       id="hero"
