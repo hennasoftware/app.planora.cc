@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import NotFoundPage from "../pages/NotFoundPage.tsx";
+import InvalidRoutePage from "../pages/InvalidRoutePage.tsx";
 import TripPage from "../pages/TripPage.tsx";
 
 export default function AppRouter() {
@@ -8,7 +8,7 @@ export default function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/trip/:slug" element={<TripPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<InvalidRoutePage />} />
       </Routes>
     </BrowserRouter>
   );
