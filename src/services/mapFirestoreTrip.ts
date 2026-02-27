@@ -51,6 +51,7 @@ export default function mapFirestoreTrip(doc: DocumentData): Trip {
       activities: (day.activities ?? []).map((activity: Activity) => ({
         time: activity.time ?? "",
         description: activity.description ?? "",
+        icon: activity.icon ?? "",
       })),
       tip: day.tip ?? "",
     })),
