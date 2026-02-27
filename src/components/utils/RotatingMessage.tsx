@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-import calculateTimeLeft from "../../services/calculateTimeLeft.ts";
-import { getRotatingMessages } from "../../services/getRotatingMessage.ts";
+import useRotatingMessages from "../../hooks/useRotatingMessages.ts";
 import type Trip from "../../types/Trip.ts";
 
 type RotatingMessageProps = {
@@ -9,32 +8,13 @@ type RotatingMessageProps = {
 };
 
 export default function RotatingMessage({ trip }: RotatingMessageProps) {
+  const messages = useRotatingMessages(trip.startDate);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-  const [messages, setMessages] = useState<string[]>([""]);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    const updateMessages = () => {
-      const timeLeft = calculateTimeLeft(trip.startDate);
-      const totalSeconds =
-        parseInt(timeLeft.days) * 24 * 3600 +
-        parseInt(timeLeft.hours) * 3600 +
-        parseInt(timeLeft.minutes) * 60 +
-        parseInt(timeLeft.seconds);
+    if (!messages.length) return;
 
-      const newMessages = getRotatingMessages(totalSeconds);
-
-      setMessages(newMessages);
-    };
-
-    updateMessages();
-
-    const interval = setInterval(updateMessages, 60000);
-
-    return () => clearInterval(interval);
-  }, [trip.startDate]);
-
-  useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
 
@@ -46,6 +26,8 @@ export default function RotatingMessage({ trip }: RotatingMessageProps) {
 
     return () => clearInterval(interval);
   }, [messages.length]);
+
+  if (!messages.length) return null;
 
   return (
     <div className="mx-auto w-full max-w-lg rounded-xl bg-white/25 py-6 text-center text-sm font-semibold text-white md:text-base">
